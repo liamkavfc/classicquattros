@@ -68,6 +68,10 @@ input:focus {
 	outline:0;
 	border:1px solid #04A4CC;
 }
+#post-8 {
+	width: 80%;
+	margin: 0 auto;
+}
 
 /*------------------------------------*\
     STRUCTURE
