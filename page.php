@@ -14,10 +14,6 @@ get_template_part( 'header', 'meta' ); ?>
 
 			<?php $content_width = 980; ?>
 
-			<div class="entry-image">
-				<?php the_post_thumbnail( 'deck-l' ); ?>
-			</div>
-
 		<?php endif; ?>
 
 		<main id="content" role="main" itemprop="mainContentOfPage">
