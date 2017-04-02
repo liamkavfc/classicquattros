@@ -2,7 +2,7 @@
 <div class="content-wrapper">
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="inner-container">
 
 			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
 

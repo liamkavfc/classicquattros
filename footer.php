@@ -16,6 +16,24 @@
 
 		<?php wp_footer(); ?>
 
+		<script type="text/javascript">
+			jQuery(function($) {
+				$('.navbar-toggle').click( function() {
+					$('.menu').slideToggle();
+					$('span.icon-bar').toggleClass('open');
+				});
+
+				$('.scrollContent').mouseenter( function(){
+					$(this).html('<div class="downArrow"></div>');
+				});
+
+				$('.scrollContent').mouseleave( function(){
+					$(this).html('Scroll down');
+				});
+
+			});
+		</script>
+
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){

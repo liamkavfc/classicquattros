@@ -80,7 +80,7 @@ function html5blank_nav()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
+		'items_wrap'      => '<div class="welcome"><img src="img/classic.png" /></div><ul>%3$s</ul>',
 		'depth'           => 0,
 		'walker'          => ''
 		)
