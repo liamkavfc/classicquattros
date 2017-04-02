@@ -26,7 +26,7 @@
 		<?php wp_head(); ?>
 		<style type="text/stylesheet">
 			#header-meta {
-        			background-image: <?php the_post_thumbnail( 'deck-l' ); ?>;
+        			background-image: <?php the_post_thumbnail_url( 'deck-l' ); ?>;
 			}	    
 		</style>
 	</head>
