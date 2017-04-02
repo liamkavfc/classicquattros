@@ -24,7 +24,10 @@
 		
 		<!-- Hooks -->
 		<?php wp_head(); ?>
-		    
+	
+		#header-meta {
+        		background-image: <?php the_post_thumbnail( 'deck-l' ); ?>;
+		}	    
 	</head>
 
 

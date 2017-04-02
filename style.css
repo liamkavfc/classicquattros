@@ -498,7 +498,6 @@ header:after, main:after, footer:after, aside:after, section:after,
 /* Header Meta */
 
 #header-meta {
-	background-image: <?php the_post_thumbnail( 'deck-l' ); ?>;
 	padding: 50px 0 30px 0;
 	margin-bottom: 70px;
 	}
