@@ -24,9 +24,9 @@
 		
 		<!-- Hooks -->
 		<?php wp_head(); ?>
-		<style type="text/stylesheet">
+		<style type="text/css">
 			#header-meta {
-        			background-image: <?php the_post_thumbnail_url( 'deck-l' ); ?>;
+        			background-image: url(<?php the_post_thumbnail_url( 'deck-l' ); ?>);
 			}	    
 		</style>
 	</head>
