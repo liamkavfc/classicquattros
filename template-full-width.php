@@ -1,12 +1,8 @@
-<?php
-/**
-* @description This template display singe page
-* @package Deck Pro
-* @version 1.0
-*/
- get_header();
+<?php /* Template Name: Full Width */ ?>
 
-get_template_part( 'header', 'meta' ); ?>
+<?php get_header(); ?>
+
+<?php get_template_part( 'header', 'meta' ); ?>
 
 	<div class="wrap clearfix">
 
@@ -20,7 +16,7 @@ get_template_part( 'header', 'meta' ); ?>
 
 		<?php endif; ?>
 
-		<main id="content" role="main" itemprop="mainContentOfPage">
+		<main id="content" class="full-width" role="main" itemprop="mainContentOfPage">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -34,18 +30,11 @@ get_template_part( 'header', 'meta' ); ?>
 					<?php wp_link_pages( array( 'before' => '<nav class="pagination">', 'after' => '</nav>' ) ); ?>
 
 				</article>
-				<!-- If comments are open or we have at least one comment, load up the comment template. -->
-				<?php if( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
 
-			endwhile; ?>
+			<?php endwhile; ?>
 		
 		</main>
 
-		<!--Sidebar-->
-		<?php get_sidebar(); ?>
-
 	</div>
 			
-<?php get_footer(); ?>
+<?php get_footer();

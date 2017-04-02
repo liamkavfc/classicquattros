@@ -1,0 +1,49 @@
+Keep a change log to describe all the changes made to program source files. The purpose of this is so that people investigating bugs in the future will know about the changes that might have introduced the bug. Often a new bug can be found by looking at what was recently changed. More importantly, change logs can help you eliminate conceptual inconsistencies between different parts of a program, by giving you a history of how the conflicting concepts arose and who they came from.
+
+Changelog Legend:
+----
+
+[+] = Added
+[*] = Changed
+[^] = Moved
+[=] = No Changes
+[x] = Deleted
+[!] = Bugs
+
+----
+
+(November 10, 2016 ) Version 1.0.4 Styled Themes <www.styledthemes.com>
+
+[*] Prefixing of third party script changed
+[x] add_editor_style() function removed
+[*] esc_url() for url sanitization changed to esc_url_raw()
+
+---
+
+(October 05, 2016 ) Version 1.0.3 Styled Themes <www.styledthemes.com>
+
+[*] All third party resources are prefixed with theme slug
+[*] get_theme_mod() value is escpad when used on wp_query
+
+---
+
+(October 04, 2016 ) Version 1.0.2 Styled Themes <www.styledthemes.com>
+
+[*] Handler for slicknav,jquery Changed
+[*] slicknav.css enqueue by using default WordPress function wp_enqueue_style()
+
+---
+
+
+(September 30, 2016 ) Version 1.0.1 Styled Themes <www.styledthemes.com>
+
+[!] Prefixing, escaping and sanitization bug Fixed
+[x] Plugin territory function Deleted
+[+] Prefixing on google font Added
+[+] Enqueue of jQuery Deleted
+
+---
+
+(April 9, 2016 ) Version 1.0 Styled Themes <www.styledthemes.com>
+
+	Initial release

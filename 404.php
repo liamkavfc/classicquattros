@@ -1,24 +1,34 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ * @since Deck 1.0
+ */
+?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+<?php  get_header(); ?>
 
-			<!-- article -->
-			<article id="post-404">
+<?php get_template_part( 'header', 'meta' ); ?>
 
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
+	<div class="wrap clearfix">
 
-			</article>
-			<!-- /article -->
+		<main id="content" class="full-width" role="main" itemprop="mainContentOfPage">
 
-		</section>
-		<!-- /section -->
-	</main>
+				<!-- Article -->
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
 
-<?php get_sidebar(); ?>
+					<header class="entry-header">
+						<h1 class="entry-title" itemprop="headline"><?php _e( '<span class="big">404</span>', 'deck' ); ?></h1>
+					</header>
 
-<?php get_footer(); ?>
+					<div class="entry-content" itemprop="text">
+						<p><?php _e( 'Well, this is embarrassing. We can\'t seem to locate the page you\'re looking for. <br>Bad link? Mistyped address? We\'re not exactly sure. <br><br>You can always search for the page below.', 'deck'); ?></p>
+						<?php get_search_form(); ?>
+					</div>
+
+				</article>
+
+		</main>
+
+	</div>
+			
+<?php get_footer();

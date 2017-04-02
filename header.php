@@ -1,49 +1,75 @@
-<!doctype html>
-<html <?php language_attributes(); ?> class="no-js">
+<?php
+/**
+ * The header for our theme.
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @package Deck
+ */
+
+?><!DOCTYPE html>
+
+<html <?php language_attributes(); ?>>
+
+	<!-- A Mighty WordPress Theme (http://styledthemes.com/) -->
+
 	<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
-		<link href="//www.google-analytics.com" rel="dns-prefetch">
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-        <link href="<?php echo get_template_directory_uri(); ?>/foundation/css/foundation.css" rel="stylesheet">
-
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="<?php bloginfo('description'); ?>">
-
+		<!-- Meta -->
+		<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<!-- Title -->
+					
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		
+		<!-- Hooks -->
 		<?php wp_head(); ?>
-		<script>
-        // conditionizr.com
-        // configure environment tests
-        conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
-            tests: {}
-        });
-        </script>
-
+		    
 	</head>
-	<body <?php body_class(); ?>>
 
-		<!-- wrapper -->
-		<div class="wrapper">
-			<!-- nav -->
-			<nav class="nav" role="navigation">
-				<?php html5blank_nav(); ?>
-			</nav>
-			<!-- /nav -->
-			<!-- header -->
-			<header class="header clear" role="banner">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/background2_800.jpg" />
-					<button type="button" class="navbar-toggle">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
 
-					<div class="scrollContent">
-							Scroll down
-					</div>
-			</header>
-			<!-- /header -->
+	<body <?php body_class( 'fadeDown' ); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+	    <header id="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+		    <div class="wrap clearfix">
+			        
+			    <!-- Logo -->
+				<div class="logo" itemprop="headline">
+					<?php if ( has_custom_logo() ) {
+					  
+							deck_the_custom_logo(); ?>
+					<?php } else { ?>
+
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>" class="plain"><?php bloginfo( 'name' ); ?></a>
+					<?php } ?>
+				</div>
+
+			    <!-- Navigation -->
+			    <nav role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<?php if( has_nav_menu( 'header-menu' ) ) : ?>
+					
+					    <?php
+						    wp_nav_menu(
+							    array(
+								    'theme_location' => 'header-menu',
+								    'container'      => false,
+								    'menu_id'        => 'nav',
+								    'menu_class'     => 'header-menu',
+								    'depth'          => '4'
+							    )
+						    );
+					    ?>
+					
+					<?php else : ?>
+					
+					<ul id="nav">
+						<?php wp_list_pages( 'title_li=&depth=1' ); ?>
+					</ul>
+					
+					<?php endif; ?>
+				</nav>
+
+			</div>
+							
+		</header>

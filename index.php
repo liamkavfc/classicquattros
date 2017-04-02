@@ -1,20 +1,43 @@
-<?php get_header(); ?>
-<div class="content-wrapper">
-	<main role="main">
-		<!-- section -->
-		<section class="inner-container">
+<?php
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Deck
+ * @version 1.0
+ */
+get_header(); ?>
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+	<div class="wrap clearfix">
+		<?php $blog_layout = get_theme_mod( 'dp_blog_layout', 'blogright' );
 
-			<?php get_template_part('loop'); ?>
+		switch( $blog_layout ) {
+			case 'blogright' :
+				do_action( 'deck_show_blog_content', 'blog-with-right-sidebar' );
+				//sidebar
+				get_sidebar();
+			break;
+			case 'blogleft' :
+				do_action( 'deck_show_blog_content', 'blog-with-left-sidebar' );
+				//sidebar
+				get_sidebar( 'blog-left' );
+			break;
+			case 'blogwide' :
+				do_action( 'deck_show_blog_content', 'blog-with-no-sidebar' );
+			break;
+			default:
+				do_action( 'deck_show_blog_content', 'blog-with-right-sidebar' );
+				//sidebar
+				get_sidebar();
+			break;
 
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-	<?php get_sidebar(); ?>
-
-	<?php get_footer(); ?>
-</div>
+		} ?>
+	</div>
+			
+<?php get_footer();

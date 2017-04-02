@@ -1,48 +1,52 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+<?php
+/**
+* @description This template display content on footer section
+* @package Deck
+* @version 1.0
+*/
+ get_sidebar( 'footer' ); ?>
 
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
+<footer id="footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+	<div class="wrap clearfix">
 
-			</footer>
-			<!-- /footer -->
+		<?php if ( is_page_template( 'template-portfolio.php' ) ) : ?>
+			<hr>
+		<?php endif;?>
 
-		</div>
-		<!-- /wrapper -->
+	    <!-- Links -->
+	    <nav role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		    <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
 
-		<?php wp_footer(); ?>
+			    <?php
+				    wp_nav_menu(
+					    array(
+						    'theme_location' => 'footer-menu',
+						    'container'      => false,
+						    'menu_id'        => 'links',
+						    'menu_class'     => 'footer-menu',
+						    'depth'          => '1'
+					    )
+				    );
+	    	endif; ?>
+		</nav>
 
-		<script type="text/javascript">
-			jQuery(function($) {
-				$('.navbar-toggle').click( function() {
-					$('.menu').slideToggle();
-					$('span.icon-bar').toggleClass('open');
-				});
+	    <!-- Copyright -->
+		<p class="copyright">
 
-				$('.scrollContent').mouseenter( function(){
-					$(this).html('<div class="downArrow"></div>');
-				});
+			<?php if  ( get_theme_mod( 'deck_hide_footer_text' ) != '1' ) { ?>
+					<div class="copyright">
+	                    <?php esc_html_e( 'Deck WordPress Theme by', 'deck' ); ?>
+						<a href="<?php echo esc_url( 'http://styledthemes.com/' ); ?>" target="_blank"><?php esc_html_e( 'StyledThemes', 'deck' ); ?></a>
+					</div>
+			<?php } ?>
 
-				$('.scrollContent').mouseleave( function(){
-					$(this).html('Scroll down');
-				});
+		</p>
 
-			});
-		</script>
 
-		<!-- analytics -->
-		<script>
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-		ga('send', 'pageview');
-		</script>
+	</div>
+</footer>
 
-	</body>
+<?php wp_footer(); ?>
+
+</body>
 </html>
